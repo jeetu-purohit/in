@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @keyframes glitch {
+          0% { transform: translate(0) }
+          20% { transform: translate(-2px, 2px) }
+          40% { transform: translate(-2px, -2px) }
+          60% { transform: translate(2px, 2px) }
+          80% { transform: translate(2px, -2px) }
+          100% { transform: translate(0) }
+        }
+        
+        .glitch-text {
+          position: relative;
+          animation: glitch 3s infinite;
+        }
+        
+        .glitch-text::before, .glitch-text::after {
+          content: attr(data-text);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        
+        .glitch-text::before {
+          left: 2px;
+          text-shadow: -1px 0 white;
+          clip: rect(24px, 550px, 90px, 0);
+          animation: glitch 5s infinite linear alternate-reverse;
+        }
+        
+        .glitch-text::after {
+          left: -2px;
+          text-shadow: -1px 0 white;
+          clip: rect(85px, 550px, 140px, 0);
+          animation: glitch 1s infinite linear alternate-reverse;
+        }
+        
+        .typewriter {
+          overflow: hidden;
+          border-right: .15em solid white;
+          white-space: nowrap;
+          margin: 0 auto;
+          letter-spacing: .1em;
+          animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+          from { width: 0 }
+          to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+          from, to { border-color: transparent }
+          50% { border-color: white; }
+        }
+        
+        .rotate-text {
+          writing-mode: vertical-rl;
+          text-orientation: mixed;
+        }
+        
+        .noise-bg {
+          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+          background-blend-mode: overlay;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <div class="fixed top-0 left-0 h-screen w-16 border-r border-gray-800 flex flex-col justify-between items-center py-8">
+        <div class="rotate-text text-gray-500 tracking-widest font-mono text-xs">NAVIGATION</div>
+        <div class="flex flex-col space-y-12">
+            <a href="#about" class="transform -rotate-90 hover:text-gray-400 transition">ABOUT</a>
+            <a href="#projects" class="transform -rotate-90 hover:text-gray-400 transition">WORK</a>
+            <a href="#skills" class="transform -rotate-90 hover:text-gray-400 transition">SKILLS</a>
+            <a href="#contact" class="transform -rotate-90 hover:text-gray-400 transition py-6">CONTACT</a>
+        </div>
+        <div class="rotate-text text-gray-500">2025</div>
+    </div>
+    
+    <div class="container mx-auto pl-24 pr-8 py-12 max-w-5xl">
+        <!-- Header -->
+        <header class="mb-24 mt-16">
+            <div class="flex flex-col">
+                <div class="mb-4">
+                    <div class="text-gray-500 text-xs font-mono mb-2">DEVELOPER / ENGINEER</div>
+                    <h1 class="text-5xl md:text-7xl font-bold text-white uppercase glitch-text" data-text="JEETU PUROHIT">JEETU PUROHIT</h1>
+                </div>
+                <div class="my-8 pl-2 border-l-2 border-white">
+                    <p class="text-gray-400 typewriter">I make things that work. Sometimes.</p>
+                </div>
+            </div>
+        </header>
+        
+        <!-- About -->
+        <section id="about" class="mb-32">
+            <div class="flex flex-col space-y-8">
+                <h2 class="text-xs font-mono text-gray-500 tracking-widest">01 / ABOUT</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="md:col-span-2">
+                        <p class="text-gray-300 leading-relaxed font-mono">
+                            I don't do "passion projects" or "dream in code." I solve problems. 
+                            <span class="line-through">5+</span> 1 years building web applications that actually work.
+                            No nonsense, no frills, just functional, efficient solutions.
+                            <br><br>
+                            Currently tolerating projects with React, Node.js, and cloud technologies.
+                            <br><br>
+                            Don't ask me to "innovate." Ask me to fix what's broken.
+                        </p>
+                    </div>
+                    <div class="md:col-span-1 bg-gray-900 p-4 font-mono text-xs text-gray-400 noise-bg">
+                        <code>
+                            > STATUS<br>
+                            Available for work<br>
+                            > LOCATION<br>
+                            Somewhere remote<br>
+                            > AVAILABILITY<br>
+                            When the project is interesting<br>
+                            > COMMUNICATION<br>
+                            Direct. Sometimes too direct.
+                        </code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="mb-32">
+            <h2 class="text-xs font-mono text-gray-500 tracking-widest mb-8">02 / WORK</h2>
+            <div class="space-y-12">
+                <div class="border border-gray-800 p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold">NOT ANOTHER E-COMMERCE SITE</h3>
+                        <span class="text-xs text-gray-500 font-mono">2024</span>
+                    </div>
+                    <p class="text-gray-400 mb-4 font-mono">Made it. It works. People buy things. What else do you need to know?</p>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <span class="border border-gray-700 text-xs px-2 py-1 text-gray-400 font-mono">React</span>
+                        <span class="border border-gray-700 text-xs px-2 py-1 text-gray-400 font-mono">Node.js</span>
+                        <span class="border border-gray-700 text-xs px-2 py-1 text-gray-400 font-mono">MongoDB</span>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-800 p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold">METRICS NOBODY LOOKS AT</h3>
+                        <span class="text-xs text-gray-500 font-mono">2023</span>
+                    </div>
+                    <p class="text-gray-400 mb-4 font-mono">Analytics dashboard for executives who don't understand data but like pretty charts.</p>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <span class="border border-gray-700 text-xs px-2 py-1 text-gray-400 font-mono">Vue.js</span>
+                        <span class="border border-gray-700 text-xs px-2 py-1 text-gray-400 font-mono">D3.js</span>
+                        <span class="border border-gray-700 text-xs px-2 py-1 text-gray-400 font-mono">AWS</span>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-800 p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold">FAILED STARTUP #3</h3>
+                        <span class="text-xs text-gray-500 font-mono">2022</span>
+                    </div>
+                    <p class="text-gray-400 mb-4 font-mono">Built something great. Nobody used it. Still got paid.</p>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <span class="border border-gray-700 text-xs px-2 py-1 text-gray-400 font-mono">TypeScript</span>
+                        <span class="border border-gray-700 text-xs px-2 py-1 text-gray-400 font-mono">GraphQL</span>
+                        <span class="border border-gray-700 text-xs px-2 py-1 text-gray-400 font-mono">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="mb-32">
+            <h2 class="text-xs font-mono text-gray-500 tracking-widest mb-8">03 / SKILLS</h2>
+            <div class="font-mono">
+                <div class="border-b border-gray-800 py-4 flex justify-between">
+                    <span>JavaScript</span>
+                    <span class="text-gray-500">Despite its flaws</span>
+                </div>
+                <div class="border-b border-gray-800 py-4 flex justify-between">
+                    <span>React</span>
+                    <span class="text-gray-500">It's fine</span>
+                </div>
+                <div class="border-b border-gray-800 py-4 flex justify-between">
+                    <span>Node.js</span>
+                    <span class="text-gray-500">When I have to</span>
+                </div>
+                <div class="border-b border-gray-800 py-4 flex justify-between">
+                    <span>TypeScript</span>
+                    <span class="text-gray-500">Obviously better</span>
+                </div>
+                <div class="border-b border-gray-800 py-4 flex justify-between">
+                    <span>Python</span>
+                    <span class="text-gray-500">For the sensible tasks</span>
+                </div>
+                <div class="border-b border-gray-800 py-4 flex justify-between">
+                    <span>Docker</span>
+                    <span class="text-gray-500">It works on MY machine</span>
+                </div>
+                <div class="border-b border-gray-800 py-4 flex justify-between">
+                    <span>AWS</span>
+                    <span class="text-gray-500">Unnecessarily complex</span>
+                </div>
+                <div class="border-b border-gray-800 py-4 flex justify-between">
+                    <span>CSS</span>
+                    <span class="text-gray-500">A necessary evil</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="mb-32">
+            <h2 class="text-xs font-mono text-gray-500 tracking-widest mb-8">04 / CONTACT</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Have a project that needs fixing?</h3>
+                    <p class="text-gray-400 font-mono mb-8">I might be interested. No guarantees.</p>
+                </div>
+                <div class="font-mono space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-gray-500">Email:</span>
+                        <a href="mailto:dev@example.com" class="text-white hover:text-gray-400 transition">jeetujpurohit@gmail.com</a>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-gray-500">GitHub:</span>
+                        <a href="https://github.com/jeetu-purohit"text-white hover:text-gray-400 transition">@jeetu-purohit</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-8 border-t border-gray-800 flex justify-between items-center font-mono text-xs text-gray-500">
+            <p>© 2025. No rights reserved. Do whatever you want.</p>
+            <p>Made with minimal enthusiasm</p>
+        </footer>
+    </div>
+</body>
+</html>
